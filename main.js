@@ -200,7 +200,6 @@ function openExploreLKModal() {
   if (!backdrop) return;
   backdrop.classList.add('open');
   document.body.style.overflow = 'hidden';
-  // Focus the modal for accessibility
   setTimeout(() => backdrop.focus(), 50);
 }
 
@@ -211,23 +210,49 @@ function closeExploreLKModal() {
   document.body.style.overflow = '';
 }
 
-(function initModal() {
-  const backdrop  = document.getElementById('explorelk-modal');
-  const closeBtn  = document.getElementById('modal-close');
+/* ── Elephant Pulse Project Detail Modal ────────────────────────── */
+function openElephantPulseModal() {
+  const backdrop = document.getElementById('elephantpulse-modal');
   if (!backdrop) return;
+  backdrop.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => backdrop.focus(), 50);
+}
 
-  // Close button
-  if (closeBtn) closeBtn.addEventListener('click', closeExploreLKModal);
+function closeElephantPulseModal() {
+  const backdrop = document.getElementById('elephantpulse-modal');
+  if (!backdrop) return;
+  backdrop.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+(function initModal() {
+  const exploreBackdrop  = document.getElementById('explorelk-modal');
+  const exploreCloseBtn  = document.getElementById('modal-close');
+  const epBackdrop = document.getElementById('elephantpulse-modal');
+  const epCloseBtn = document.getElementById('modal-close-ep');
+
+  // Close buttons
+  if (exploreCloseBtn) exploreCloseBtn.addEventListener('click', closeExploreLKModal);
+  if (epCloseBtn) epCloseBtn.addEventListener('click', closeElephantPulseModal);
 
   // Click outside modal panel to close
-  backdrop.addEventListener('click', (e) => {
-    if (e.target === backdrop) closeExploreLKModal();
-  });
+  if (exploreBackdrop) {
+    exploreBackdrop.addEventListener('click', (e) => {
+      if (e.target === exploreBackdrop) closeExploreLKModal();
+    });
+  }
+  if (epBackdrop) {
+    epBackdrop.addEventListener('click', (e) => {
+      if (e.target === epBackdrop) closeElephantPulseModal();
+    });
+  }
 
   // Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && backdrop.classList.contains('open')) {
-      closeExploreLKModal();
+    if (e.key === 'Escape') {
+      if (exploreBackdrop && exploreBackdrop.classList.contains('open')) closeExploreLKModal();
+      if (epBackdrop && epBackdrop.classList.contains('open')) closeElephantPulseModal();
     }
   });
 })();
