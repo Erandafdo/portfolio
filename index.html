@@ -226,8 +226,8 @@
               <div class="skill-bar"><div class="skill-fill" data-width="72"></div></div>
             </div>
             <div class="skill-item">
-              <div class="skill-top"><span class="skill-name">Python</span><span class="skill-pct">68%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="68"></div></div>
+              <div class="skill-top"><span class="skill-name">PHP &amp; Python</span><span class="skill-pct">75%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
             </div>
             <div class="skill-item">
               <div class="skill-top"><span class="skill-name">REST APIs</span><span class="skill-pct">84%</span></div>
@@ -348,9 +348,34 @@
             </div>
           </article>
 
-
-
-
+          <!-- Project 4 — Eldercare Management System -->
+          <article class="project-card reveal reveal-delay-3" id="project-eldercare" onclick="openEldercareModal()" style="cursor:pointer;" title="Click to view project details">
+            <div class="project-img-wrap">
+              <img class="project-img" src="assets/images/project-eldercare.png" alt="Eldercare Management System screenshot" loading="lazy" />
+              <div class="project-overlay">
+                <span class="overlay-details-hint">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                  View Details
+                </span>
+                <a href="https://github.com/Erandafdo" class="overlay-github" target="_blank" rel="noopener noreferrer" id="proj4-github" onclick="event.stopPropagation()">
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">PHP</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Management</span>
+              </div>
+              <h3 class="project-title">CarePulse — Eldercare Management</h3>
+              <p class="project-desc">
+                A robust management system for elderly care facilities, featuring patient tracking, care schedules, and medical record management built with PHP.
+              </p>
+            </div>
+          </article>
 
         </div>
       </div>
@@ -709,7 +734,66 @@
       </div>
 
     </div>
+  </div>  <!-- ══════════════════════════════════════════════════
+       PROJECT DETAIL MODAL — Eldercare Management
+  ══════════════════════════════════════════════════ -->
+  <div class="modal-backdrop" id="eldercare-modal">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" id="modal-close-eldercare" aria-label="Close modal">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+
+      <!-- Header section -->
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-title-4">CarePulse — Eldercare Management</h2>
+        <p class="modal-subtitle">
+          A robust web application designed for elderly care facilities. It provides staff with an intuitive dashboard to manage patient health records, daily care schedules, and upcoming medical appointments, ensuring high-quality personalized care.
+        </p>
+        <div class="modal-tags">
+          <span class="tag">PHP</span>
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Dashboard</span>
+        </div>
+        <div class="modal-actions">
+          <a href="https://github.com/Erandafdo" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub Repo
+          </a>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div class="modal-features">
+        <h3 class="features-title">Key Features</h3>
+        <ul class="features-list">
+          <li><strong>Patient Records:</strong> Secure management of elderly patient health profiles and emergency contacts.</li>
+          <li><strong>Care Scheduling:</strong> Staff can assign and track daily medication and therapy routines.</li>
+          <li><strong>Custom Authentication:</strong> Secure login and registration tailored for staff members.</li>
+          <li><strong>Interactive UI:</strong> Clean and accessible interfaces designed with pure HTML and CSS.</li>
+        </ul>
+      </div>
+
+      <!-- Screenshots carousel -->
+      <div class="modal-screen-section">
+        <p class="screen-type-label">🖥️ Desktop Views</p>
+        <div class="modal-mobile-grid" style="grid-template-columns: repeat(3, 1fr);">
+          <div class="mobile-screen-wrap">
+            <img src="assets/images/eldercare/desktop-1.jpg" alt="Eldercare Dashboard View" loading="lazy" />
+          </div>
+          <div class="mobile-screen-wrap">
+            <img src="assets/images/eldercare/desktop-2.jpg" alt="Eldercare Patient Registration" loading="lazy" />
+          </div>
+          <div class="mobile-screen-wrap">
+            <img src="assets/images/eldercare/desktop-3.jpg" alt="Eldercare Settings and Staff View" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
+
 
   <script src="main.js"></script>
 </body>

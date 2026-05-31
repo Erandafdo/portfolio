@@ -242,6 +242,22 @@ function closeCeylonWineModal() {
   document.body.style.overflow = '';
 }
 
+/* ── Eldercare Project Detail Modal ────────────────────────── */
+function openEldercareModal() {
+  const backdrop = document.getElementById('eldercare-modal');
+  if (!backdrop) return;
+  backdrop.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => backdrop.focus(), 50);
+}
+
+function closeEldercareModal() {
+  const backdrop = document.getElementById('eldercare-modal');
+  if (!backdrop) return;
+  backdrop.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 (function initModal() {
   const exploreBackdrop  = document.getElementById('explorelk-modal');
   const exploreCloseBtn  = document.getElementById('modal-close');
@@ -249,11 +265,14 @@ function closeCeylonWineModal() {
   const epCloseBtn = document.getElementById('modal-close-ep');
   const cwBackdrop = document.getElementById('ceylonwine-modal');
   const cwCloseBtn = document.getElementById('modal-close-cw');
+  const eldercareBackdrop = document.getElementById('eldercare-modal');
+  const eldercareCloseBtn = document.getElementById('modal-close-eldercare');
 
   // Close buttons
   if (exploreCloseBtn) exploreCloseBtn.addEventListener('click', closeExploreLKModal);
   if (epCloseBtn) epCloseBtn.addEventListener('click', closeElephantPulseModal);
   if (cwCloseBtn) cwCloseBtn.addEventListener('click', closeCeylonWineModal);
+  if (eldercareCloseBtn) eldercareCloseBtn.addEventListener('click', closeEldercareModal);
 
   // Click outside modal panel to close
   if (exploreBackdrop) {
@@ -271,6 +290,11 @@ function closeCeylonWineModal() {
       if (e.target === cwBackdrop) closeCeylonWineModal();
     });
   }
+  if (eldercareBackdrop) {
+    eldercareBackdrop.addEventListener('click', (e) => {
+      if (e.target === eldercareBackdrop) closeEldercareModal();
+    });
+  }
 
   // Escape key
   document.addEventListener('keydown', (e) => {
@@ -278,6 +302,7 @@ function closeCeylonWineModal() {
       if (exploreBackdrop && exploreBackdrop.classList.contains('open')) closeExploreLKModal();
       if (epBackdrop && epBackdrop.classList.contains('open')) closeElephantPulseModal();
       if (cwBackdrop && cwBackdrop.classList.contains('open')) closeCeylonWineModal();
+      if (eldercareBackdrop && eldercareBackdrop.classList.contains('open')) closeEldercareModal();
     }
   });
 })();
