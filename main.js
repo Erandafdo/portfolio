@@ -226,15 +226,34 @@ function closeElephantPulseModal() {
   document.body.style.overflow = '';
 }
 
+/* ── Ceylon Cinnamon Wine Project Detail Modal ────────────────────────── */
+function openCeylonWineModal() {
+  const backdrop = document.getElementById('ceylonwine-modal');
+  if (!backdrop) return;
+  backdrop.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => backdrop.focus(), 50);
+}
+
+function closeCeylonWineModal() {
+  const backdrop = document.getElementById('ceylonwine-modal');
+  if (!backdrop) return;
+  backdrop.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 (function initModal() {
   const exploreBackdrop  = document.getElementById('explorelk-modal');
   const exploreCloseBtn  = document.getElementById('modal-close');
   const epBackdrop = document.getElementById('elephantpulse-modal');
   const epCloseBtn = document.getElementById('modal-close-ep');
+  const cwBackdrop = document.getElementById('ceylonwine-modal');
+  const cwCloseBtn = document.getElementById('modal-close-cw');
 
   // Close buttons
   if (exploreCloseBtn) exploreCloseBtn.addEventListener('click', closeExploreLKModal);
   if (epCloseBtn) epCloseBtn.addEventListener('click', closeElephantPulseModal);
+  if (cwCloseBtn) cwCloseBtn.addEventListener('click', closeCeylonWineModal);
 
   // Click outside modal panel to close
   if (exploreBackdrop) {
@@ -247,12 +266,18 @@ function closeElephantPulseModal() {
       if (e.target === epBackdrop) closeElephantPulseModal();
     });
   }
+  if (cwBackdrop) {
+    cwBackdrop.addEventListener('click', (e) => {
+      if (e.target === cwBackdrop) closeCeylonWineModal();
+    });
+  }
 
   // Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       if (exploreBackdrop && exploreBackdrop.classList.contains('open')) closeExploreLKModal();
       if (epBackdrop && epBackdrop.classList.contains('open')) closeElephantPulseModal();
+      if (cwBackdrop && cwBackdrop.classList.contains('open')) closeCeylonWineModal();
     }
   });
 })();
