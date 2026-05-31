@@ -182,7 +182,6 @@
 (function initHeroEntrance() {
   const hero = document.querySelector('.hero-content');
   if (!hero) return;
-  // The hero is already visible (not a .reveal element); add a quick fade-in
   hero.style.opacity = '0';
   hero.style.transform = 'translateY(20px)';
   hero.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
@@ -193,3 +192,43 @@
     });
   });
 })();
+
+
+/* ── ExploreLK Project Detail Modal ────────────────────────── */
+function openExploreLKModal() {
+  const backdrop = document.getElementById('explorelk-modal');
+  if (!backdrop) return;
+  backdrop.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Focus the modal for accessibility
+  setTimeout(() => backdrop.focus(), 50);
+}
+
+function closeExploreLKModal() {
+  const backdrop = document.getElementById('explorelk-modal');
+  if (!backdrop) return;
+  backdrop.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+(function initModal() {
+  const backdrop  = document.getElementById('explorelk-modal');
+  const closeBtn  = document.getElementById('modal-close');
+  if (!backdrop) return;
+
+  // Close button
+  if (closeBtn) closeBtn.addEventListener('click', closeExploreLKModal);
+
+  // Click outside modal panel to close
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) closeExploreLKModal();
+  });
+
+  // Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && backdrop.classList.contains('open')) {
+      closeExploreLKModal();
+    }
+  });
+})();
+
