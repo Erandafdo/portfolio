@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Editor directories
+.vscode/
+.idea/
+
+# Node
+node_modules/
+
+# Temp files
+*.log
