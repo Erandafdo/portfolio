@@ -778,15 +778,17 @@
       <!-- Screenshots carousel -->
       <div class="modal-screen-section">
         <p class="screen-type-label">🖥️ Desktop Views</p>
-        <div class="modal-mobile-grid" style="grid-template-columns: repeat(3, 1fr);">
-          <div class="mobile-screen-wrap">
-            <img src="assets/images/eldercare/desktop-1.jpg" alt="Eldercare Dashboard View" loading="lazy" />
+        <div style="display:grid; grid-template-columns:1fr; gap:1.5rem;">
+          <div class="modal-desktop-wrap">
+            <img src="assets/images/eldercare/desktop-1.jpg" alt="Eldercare Dashboard View" class="modal-desktop-img" loading="lazy" />
           </div>
-          <div class="mobile-screen-wrap">
-            <img src="assets/images/eldercare/desktop-2.jpg" alt="Eldercare Patient Registration" loading="lazy" />
-          </div>
-          <div class="mobile-screen-wrap">
-            <img src="assets/images/eldercare/desktop-3.jpg" alt="Eldercare Settings and Staff View" loading="lazy" />
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+            <div class="modal-desktop-wrap">
+              <img src="assets/images/eldercare/desktop-2.jpg" alt="Eldercare Patient Registration" class="modal-desktop-img" loading="lazy" />
+            </div>
+            <div class="modal-desktop-wrap">
+              <img src="assets/images/eldercare/desktop-3.jpg" alt="Eldercare Settings and Staff View" class="modal-desktop-img" loading="lazy" />
+            </div>
           </div>
         </div>
       </div>
